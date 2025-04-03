@@ -1,2 +1,2 @@
 *.env.local
-*.Auth.js
+*.Authentication/Auth.js
