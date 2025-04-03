@@ -8,7 +8,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     // typically send this data to your server
     console.log('Form submitted:', { name, email, password });
     
-    // Example of form validation
+    //form validation
     if(password.length < 8) {
         alert('Password must be at least 8 characters long');
         return;
