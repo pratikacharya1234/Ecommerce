@@ -18,6 +18,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     alert('Account creation successful!');
 });
 
+
 // Initialize Google Sign-In
 window.onload = function() {
     google.accounts.id.initialize({
