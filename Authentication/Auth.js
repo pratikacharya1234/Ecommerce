@@ -1,41 +1,51 @@
-const fname = document.getElementById('name');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    // typically send this data to your server
+    console.log('Form submitted:', { name, email, password });
+    
+    // Example of form validation
+    if(password.length < 8) {
+        alert('Password must be at least 8 characters long');
+        return;
+    }
+    
+    // Proceed with account creation
+    alert('Account creation successful!');
+});
 
-if (fname === "" || email == "" || password == ""){
-    alert("Please filled the form")
-}
-else{
-    alert("Login Sucessufll");
-}
-
-
- // Configure the Google Sign-In button
- function onSignIn(googleUser) {
-    var id_token = googleUser.getAuthResponse().id_token;
-    // Send the ID token to your server for verification
-    sendTokenToServer(id_token);
-  }
-
-  function sendTokenToServer(id_token) {
-    //  server-side logic here to verify the token
-  }
-
-  // Initialize the Google Sign-In button
-  function onGoogleLoad() {
-    gapi.signin2.render('google-signin-button', {
-      'scope': 'profile email',
-      'width': 200,
-      'height': 50,
-      'longtitle': true,
-      'theme': 'dark',
-      'onsuccess': onSignIn
+// Initialize Google Sign-In
+window.onload = function() {
+    google.accounts.id.initialize({
+        client_id: 'process.env.GOOGLE_CLIENT_ID',
+        callback: handleGoogleSignIn
     });
-  }
+    
+    google.accounts.id.renderButton(
+        document.getElementById('google-signin-button'),
+        { 
+            theme: 'outline', 
+            size: 'large',
+            width: 250,
+            text: 'signup_with'
+        }
+    );
+}
 
-  // Load the Google Sign-In SDK
-  window.onload = function() {
-    gapi.load('auth2', function() {
-      gapi.auth2.init().then(onGoogleLoad);
-    });
-  }
+function handleGoogleSignIn(response) {
+    // This function handles the response from Google Sign-In
+    const credential = response.credential;
+    
+    // Send the ID token to  server for verification
+    console.log('Google Sign-In successful, credential:', credential);
+    
+    //  typically send this token to your server
+    // for verification and user registration
+    
+    // Redirect user or show success message
+    alert('Google Sign-In successful!');
+}
