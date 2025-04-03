@@ -2,7 +2,7 @@
 const SUPABASE_URL = 'process.env.DATABASE_URL';
 const SUPABASE_ANON_KEY = 'process.env.SUPABASE_ANON_KEY';
 const supabase = supabaseClient.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
+require('dotenv').config({ path: '.env.local' });
 // Handle sign-up form submission
 document.addEventListener('DOMContentLoaded', function() {
     const signupForm = document.getElementById('signup-form');
