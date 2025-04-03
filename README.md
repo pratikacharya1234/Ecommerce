@@ -12,19 +12,7 @@ This is a modern e-commerce platform built with HTML, CSS, and JavaScript. It pr
 - Icons: Font Awesome
 - Payment Processing: Stripe (In Future)
 
-## Project Structure
-```
-ecommerce/
-├── pages/
-│   ├── Cart.html
-│   ├── Item.html
-│   ├── Setting.js
-│   ├── navbar.js
-├── index.html
-├── js
-├── css
-└── README.md
-```
+
 
 ## Setup
 ## Clone the repository:
