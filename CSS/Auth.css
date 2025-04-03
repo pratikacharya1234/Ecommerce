@@ -107,8 +107,7 @@ a{
 a:hover{
     text-decoration: underline;
 }
-.container .facebook a,
-.container .google a{
+.container .google button{
   display: block;
   height: 45px;
   width: 100%;
@@ -120,16 +119,15 @@ a:hover{
   border-radius: 5px;
   transition: all 0.3s ease;
 }
-.container .facebook i,
 .container .google i{
   padding-right: 12px;
   font-size: 20px;
 }
-.container .google a{
+.container .google button{
   background: linear-gradient(to right,  #00acee 0%, #1abeff 100%);
   margin: 20px 0 15px 0;
 }
-.container .google a:hover{
+.container .google button:hover{
   background: linear-gradient(to left,  #00acee 0%, #1abeff 100%);
   margin: 20px 0 15px 0;
 }

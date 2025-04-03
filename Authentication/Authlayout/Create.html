@@ -30,11 +30,48 @@
       </form>
         <div class="option">or Connect With Google</div>
         <div class="google">
-          <a href="#"><i class='bx bxl-google'></i>Sign in With Google</a>
+          <button id="google-signin-button">Sign in with Google</button>
         </div>
         <div class="option">
             <a href="Login.html">Already Register</a>
         </div>
     </div>
+    <!-- Include the Google Sign-In JavaScript SDK -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<!-- Add a sign-in button -->
+
+
+<script>
+  // Configure the Google Sign-In button
+  function onSignIn(googleUser) {
+    var id_token = googleUser.getAuthResponse().id_token;
+    // Send the ID token to your server for verification
+    sendTokenToServer(id_token);
+  }
+
+  function sendTokenToServer(id_token) {
+    // Implement your server-side logic here to verify the token
+  }
+
+  // Initialize the Google Sign-In button
+  function onGoogleLoad() {
+    gapi.signin2.render('google-signin-button', {
+      'scope': 'profile email',
+      'width': 200,
+      'height': 50,
+      'longtitle': true,
+      'theme': 'dark',
+      'onsuccess': onSignIn
+    });
+  }
+
+  // Load the Google Sign-In SDK
+  window.onload = function() {
+    gapi.load('auth2', function() {
+      gapi.auth2.init().then(onGoogleLoad);
+    });
+  }
+</script>
 </body>
 </html>
