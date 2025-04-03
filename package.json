@@ -3,7 +3,28 @@
     "dotenv": "^16.4.7"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "express": "^5.1.0",
     "nodejs": "^0.0.0",
     "postgres": "^3.4.5"
-  }
+  },
+  "name": "web",
+  "version": "1.0.0",
+  "description": "This is a modern e-commerce platform built with HTML, CSS, and JavaScript. It provides a comprehensive solution for online retail.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratikacharya1234/Ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pratikacharya1234/Ecommerce/issues"
+  },
+  "homepage": "https://github.com/pratikacharya1234/Ecommerce#readme"
 }
