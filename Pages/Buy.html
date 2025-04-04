@@ -3,15 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Ecommerce</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/CSS/style.css">
-    <title>Buy-Now</title>
+    <link rel="stylesheet" href="/CSS/buy.css">
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
+    <!-- Navbar will be inserted by JavaScript -->
     
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+        </div>
+        
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div id="order-items">
+                <!-- Order items will be inserted by JavaScript -->
+            </div>
+            <div class="order-total">
+                <span>Total:</span>
+                <span id="order-total-amount">$0.00</span>
+            </div>
+        </div>
+        
+        <div class="payment-form">
+            <h2>Payment Details</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="field" placeholder="Ram" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="field" placeholder="xxx@gmail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <input type="text" id="address" class="field" placeholder="Street address" required>
+                    <input type="text" id="address2" class="field" placeholder="Apt, suite, etc. (optional)">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" class="field" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state" class="field" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="zip">ZIP Code</label>
+                        <input type="text" id="zip" class="field" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="card-element">Credit or Debit Card</label>
+                    <div id="card-element"></div>
+                    <div id="card-errors" role="alert"></div>
+                </div>
+                
+                <button type="submit" id="submit-button" class="pay-button">
+                    <span id="button-text">Pay Now</span>
+                    <span id="spinner" style="display:none;">Processing...</span>
+                </button>
+            </form>
+        </div>
+    </div>
 
-
-      <!--Footer Section-->
-      <footer class="footer">
+    <!--Footer Section-->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Ecommerce</h3>
@@ -40,6 +108,8 @@
             <p>&copy; 2025 Ecommerce. All rights reserved.</p>
         </div>
     </footer>
-<script src="/JavaScript/script.js"></script>
+    
+    <script src="/JavaScript/navbar.js"></script>
+    <script src="/Authentication/Auth.js"></script>
 </body>
 </html>

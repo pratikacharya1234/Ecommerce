@@ -97,15 +97,9 @@ function removeFromCart(id) {
 
 
 // Function to buy item now
-function buyNow(id) {
+function buyNow() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const itemIndex = cart.findIndex(item => item.id === id);
-    
-    if (itemIndex > -1) {
-        const item = cart[itemIndex];
-        alert(`Buying ${item.title} for $${item.price}`);
-        // below payment logic
-    }
+    window.location.href = '/Pages/Buy.html';
 }
 
 // Navbar and Sidebar for cart page
