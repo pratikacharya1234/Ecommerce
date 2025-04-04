@@ -16,6 +16,48 @@ This is a modern e-commerce platform built with HTML, CSS, and JavaScript. It pr
 - Backend: Node.js, Express.js
 - Database: Supabase
 
+---
+
+## Folder and File Structure
+
+### Root Files
+- **`.env.local`**: Contains environment variables such as `GOOGLE_CLIENT_ID` and Supabase keys.
+- **`.gitignore`**: Specifies files and folders to be ignored by Git (e.g., `.env.local`).
+- **`db.js`**: Configures the PostgreSQL database connection using the `postgres` library.
+- **`index.html`**: The main entry point of the application, displaying the homepage.
+- **`package.json`**: Defines project metadata, dependencies, and scripts.
+- **`server.js`**: Placeholder for the backend server logic (currently empty).
+- **`README.md`**: Documentation for the project.
+
+---
+
+### Folders
+
+#### 1. **Authentication/**
+- **`Auth.js`**: Handles user authentication logic, including Google Sign-In integration.
+
+#### 2. **Authlayout/**
+- **`Login.html`**: Login page for users to sign in using email/password or Google Sign-In.
+- **`Create.html`**: Registration page for new users to create an account.
+
+#### 3. **CSS/**
+- **`Auth.css`**: Styles specific to the authentication pages (`Login.html` and `Create.html`).
+- **`style.css`**: Global styles for the entire application, including the homepage, cart, and settings.
+
+#### 4. **JavaScript/**
+- **`navbar.js`**: Dynamically generates the navigation bar and handles cart-related functionality.
+- **`Profile.js`**: Placeholder for profile-related JavaScript logic (currently incomplete).
+- **`script.js`**: Handles product search, display, and cart management on the homepage.
+- **`setting.js`**: Manages user settings, including saving profile data and clearing the cart.
+
+#### 5. **Pages/**
+- **`Cart.html`**: Displays the user's shopping cart with options to update quantities or remove items.
+- **`Item.html`**: Displays a searchable list of products fetched from an external API.
+- **`Profile.html`**: Placeholder for the user profile page (currently incomplete).
+- **`Setting.html`**: Allows users to update their profile and manage cart settings.
+
+---
+
 ## Setup
 
 ### Clone the repository:
@@ -43,45 +85,21 @@ SUPABASE_SERVICE_KEY=your-supabase-service-key
 npm start
 ```
 
+---
+
 ## Usage
 - Open `index.html` in your browser to access the application locally.
 - Navigate to `/Authlayout/Login.html` for the login page.
 
-## Login Page (`Login.html`)
-The login page allows users to log in using their email and password or via Google Sign-In.
-
-### Features:
-1. **Email and Password Login**:
-   - Users can enter their email and password to log in.
-   - The form validates that both fields are filled before submission.
-
-2. **Google Sign-In**:
-   - Users can log in using their Google account.
-   - The Google Sign-In button is integrated using the Google Sign-In JavaScript SDK.
-
-3. **Navigation**:
-   - A link is provided for new users to navigate to the registration page (`Create.html`).
-
-### File Structure:
-- **HTML**: [Authlayout/Login.html](Authlayout/Login.html)
-- **CSS**: [CSS/Auth.css](CSS/Auth.css)
-- **JavaScript**: [Authentication/Auth.js](Authentication/Auth.js)
-
-### How It Works:
-- The form submission is handled by JavaScript in `Auth.js`.
-- Google Sign-In is initialized using the `GOOGLE_CLIENT_ID` from the `.env.local` file.
-
-### Example:
-To test the login functionality:
-1. Open `Login.html` in your browser.
-2. Enter your email and password or click "Sign in with Google."
-3. If using Google Sign-In, ensure the `GOOGLE_CLIENT_ID` is correctly configured.
+---
 
 ## Deployment
 The website can be deployed to any static hosting service such as:
 - Vercel
 - Netlify
 - GitHub Pages
+
+---
 
 ## Contributing
 1. Fork the repository.
@@ -90,8 +108,12 @@ The website can be deployed to any static hosting service such as:
 4. Push to the branch (`git push origin feature/amazing-feature`).
 5. Open a Pull Request.
 
+---
+
 ## License
 MIT License
+
+---
 
 ## Acknowledgements
 - Font Awesome
