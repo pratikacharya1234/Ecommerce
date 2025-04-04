@@ -1,3 +1,13 @@
+# Web Application
+
+## Description
+
+This is a basic web application.
+
+## Usage
+
+To use this application, simply open the `index.html` file in your web browser.
+
 # E-Commerce Platform
 
 ## Overview
